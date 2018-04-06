@@ -1,3 +1,4 @@
+//0516205,0516228
 module full_adder(S, C, x, y, z);
 
 output S, C;

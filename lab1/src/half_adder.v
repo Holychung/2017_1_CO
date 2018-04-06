@@ -1,3 +1,4 @@
+//0516205,0516228
 module half_adder(S, C, x, y);
 
 output S, C;

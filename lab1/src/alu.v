@@ -1,3 +1,4 @@
+//0516205,0516228
 `timescale 1ns/1ps
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -58,7 +59,7 @@ wire		cout_tmp;
 wire            set;
 wire		cin_first;
 
-assign cin_first = ( (ALU_control == 4'b0110) || (ALU_control == 4'b0111) ) ? 1'b1 : 1'b0;
+assign cin_first = ( (ALU_control == 4'b0110) || (ALU_control == 4'b0111) )? 1'b1 : 1'b0;
 
 //              alu_top( src1, src2, less, A_invert, B_invert, cin, operation, result, cout);
 alu_top         alu_0(src1[0], src2[0], set, ALU_control[3], ALU_control[2], cin_first, ALU_control[1:0], result_tmp[0], cin_out[0]);
@@ -103,10 +104,10 @@ always@( posedge clk or negedge rst_n )
 begin
 	
 	if(!rst_n) begin
-	    result    <= 1'b0;
+	    	result    <= 1'b0;
   		zero      <= 1'b0;
 		cout      <= 1'b0;
-    	overflow  <= 1'b0;
+    		overflow  <= 1'b0;
 	end
 	else begin
 		result <= result_tmp;
